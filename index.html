@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="menuBtn" onclick="toggleMenu()" class="menu-btn">
+      <img src="img/menu.png" alt="Menu Icon" width="40" height="40">
+    </div>
+    <div id="sidebar" class="sidebar" style="display:none;">
+      <h2>Memory Game</h2>
+      <ul>
+        <li><a href="#" onclick="showSection('how')">
+          <img src="img/how.png" alt="How to Play" width="30" height="30">
+        </a></li>
+        <li><a href="#" onclick="showSection('rules')">
+          <img src="img/rules.png" alt="Rules" width="30" height="30">
+        </a></li>
+        <li><a href="#" onclick="showSection('benefits')">
+          <img src="img/benefits.png" alt="Benefits" width="30" height="30">
+        </a></li>
+        <li><a href="#" onclick="showSection('about')">
+          <img src="img/about.png" alt="About Us" width="30" height="30">
+        </a></li>
+      </ul>
+
+      <div id="info">
+        <div id="how" class="info-page">
+          <h3>How to Play</h3>
+          <p>Flip two cards at a time. If they match, they stay open.</p>
+          <p>If not, they flip back after 1 second. Continue until all pairs are matched.</p>
+        </div>
+        <div id="rules" class="info-page" style="display:none;">
+          <h3>Rules</h3>
+          <p>Only two cards can be flipped at once.</p>
+          <p>A match scores points; a mismatch counts as an attempt.</p>
+          <p>The fewer attempts, the better the score.</p>
+        </div>
+        <div id="benefits" class="info-page" style="display:none;">
+          <h3>Benefits of Playing</h3>
+          <p>Improves memory power.</p>
+          <p>Enhances concentration.</p>
+          <p>Fun and stress-relieving activity.</p>
+        </div>
+        <div id="about" class="info-page" style="display:none;">
+          <h3>About Us</h3>
+          <p>We are 2nd year CSE students from Kathir College of Engineering.</p>
+          <p>This project is developed using HTML, CSS, and JavaScript as part of our coursework.</p>
+          <p>Our aim is to build an interactive, engaging, and memory-boosting game.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-area">
+      <h2>Memory Game</h2>
+      <label for="layout">Choose Layout:</label>
+      <select id="layout">
+        <option value="2x2">2×2</option>
+        <option value="3x4">3×4</option>
+        <option value="4x4">4×4</option>
+        <option value="4x5">4×5</option>
+      </select>
+
+      <br><br>
+
+      <label for="theme">Choose Theme:</label>
+      <select id="theme">
+        <option value="fruits">Fruits</option>
+        <option value="animals">Animals</option>
+        <option value="flags">Flags</option>
+        <option value="languages">Programming Languages</option>
+      </select>
+
+      <br><br>
+
+      <button onclick="startGame()">Start Game</button>
+
+      <div class="stats">
+        <p>Attempts: <span id="attempts">0</span></p>
+        <p>Score: <span id="score">0</span></p>
+      </div>
+
+      <div id="gameBoard" class="board"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

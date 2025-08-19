@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+/* Hamburger Menu */
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  cursor: pointer;
+}
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1;
+  overflow-y: auto;
+}
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  margin: 20px 0;
+}
+.sidebar li a img {
+  vertical-align: middle;
+}
+/* Info Pages */
+.info-page {
+  margin-top: 20px;
+}
+.game-area {
+  flex: 1;
+  padding: 20px;
+  margin-left: 240px;
+}
+.stats p {
+  margin: 5px 0;
+}
+.board {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+}
+.card {
+  width: 80px;
+  height: 100px;
+  background: goldenrod;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.card img {
+  width: 80px;
+  height: 100px;
+  border-radius: 10px;
+}
+.card-back {
+  display: block;
+}
+.card-front {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card.open .card-back {
+  display: none;
+}
+.card.open .card-front {
+  display: block;
+}
+.card.matched .card-front {
+  border: 2px solid lightgreen;
+}
+@media (max-width: 800px) {
+  .game-area {
+    margin-left: 0;
+  }
+  .sidebar {
+    width: 180px;
+  }
+}
