@@ -1,4 +1,3 @@
-// Beginner-friendly image names for each theme
 var images = {
   fruits: [
     "apple.png",
